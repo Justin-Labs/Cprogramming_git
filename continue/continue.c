@@ -1,0 +1,16 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+int main()
+{
+    for (int i = 0; i < 6; i++) {
+
+        if (4 == i) {
+            continue;
+        }
+
+        printf("%d\n", i);
+    }
+
+    return EXIT_SUCCESS;
+}

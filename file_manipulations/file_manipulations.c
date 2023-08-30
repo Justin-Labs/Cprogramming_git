@@ -1,0 +1,26 @@
+#include <stdlib.h>
+#include <stdio.h>
+// introduction of ftell, tell the current file position of file pointer.
+int main()
+{
+    FILE *file_ptr = fopen("./quotes_file.txt", "r");
+
+    if (file_ptr == NULL) {
+        printf("The file could not be opened");
+
+        return EXIT_FAILURE;
+    }
+
+    printf("Start position of file_ptr: %ld\n", ftell(file_ptr));
+
+    char data_buffer[1048];
+
+    while (fgets(data_buffer, 1048, file_ptr) != NULL) {
+        printf("%s", data_buffer);
+        printf("Current position of file_ptr: %ld\n", ftell(file_ptr));
+    }
+
+    fclose(file_ptr);
+
+    return EXIT_SUCCESS;
+}
